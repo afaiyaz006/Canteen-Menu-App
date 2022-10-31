@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>
+            Uap Canteen
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <a href="#" class="navbar-brand">UAP Canteen</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav">
+                  <a href="/" class="nav-item nav-link active">Home</a>
+                  <a href="create" class="nav-item nav-link">Create</a>
+                  <a href="update" class="nav-item nav-link">Update</a>
+                  <a href="delete" class="nav-item nav-link">Delete</a>
+              
+                </div>
+              
+          </div>
+      </div>
+  </nav>
+      
+<section class="vh-100" style="background-color: #eee;">
+  <div class="bg-image"style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/026.webp'); height: 100vh; background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card rounded-3">
+            <div class="card-body p-4">
+  
+              <h4 class="text-center my-3 pb-3">Food Menu</h4>
+              {% block content %}
+              
+              {% endblock %}
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">FoodID.</th>
+                    <th scope="col">FastFood Name</th>
+                    <th scope="col">FastFood Price(Taka)</th>
+                  </tr>
+                </thead>
+                
+                
+
+        
+                <tbody>
+                  {% for fastfood in fastfoods %}
+                  <tr>
+                    <th scope="row"  id="{{fastfood.fastfood_id}}">{{fastfood.fastfood_id}}</th>
+                    <td  id="foodname-{{fastfood.fastfood_id}}">{{fastfood.foodname}}</td>
+                    <td  id="foodprice-{{fastfood.fastfood_id}}">{{fastfood.price}}</td>
+                   
+                    {% block deleteb scoped %}
+                    {% endblock %}
+                    {% block updateb scoped %}
+                    {% endblock %}
+
+                  </tr>
+                  {% endfor %}
+                </tbody>
+               
+               
+              </table>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        
+    </script>
+    <script>
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+    </script>
+
+  </html>

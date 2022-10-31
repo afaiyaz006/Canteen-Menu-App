@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block updateb %}
+<td><button id="delete-{{fastfood.fastfood_id}}"type="button" onclick="select_for_update({{fastfood.fastfood_id}})" class="btn btn-info">Select</button></td>
+{% endblock %}
+{%block content %}
+<form method="post" class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+    <div class="col-12">
+      <div class="form-outline">
+        <label class="form-label" for="form1">Enter FoodID</label>
+        <input type="text" id="form1" class="form-control" name="fastfood_id" />
+        
+        <label class="form-label" for="form1">Enter Food name </label>
+        <input type="text" id="form1" class="form-control" name="fastfood_name" />
+        
+        <label class="form-label" for="form1">Enter Food Price </label>
+        <input type="text" id="form1" class="form-control" name="fastfood_price" />
+        
+        </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Update Food</button>
+    </div>
+
+    
+  </form>
+  <script>
+    function select_for_update(id){
+      document.querySelector('input[name="fastfood_id"]').value = id;
+      fastfoodname=document.getElementById("foodname-"+id).innerHTML
+      fastfoodprice=document.getElementById("foodprice-"+id).innerHTML
+      document.querySelector('input[name="fastfood_name"]').value = fastfoodname;
+      document.querySelector('input[name="fastfood_price"]').value = fastfoodprice;
+      
+    }
+  </script>
+{% endblock %}
