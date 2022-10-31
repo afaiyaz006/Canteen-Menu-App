@@ -1,5 +1,5 @@
 # Canteen-Menu-App
- A very simple crud app.
+ A very simple flask based crud app.It implements observer design pattern(Though I messed it up).
  
  Run instruction:
  ```
