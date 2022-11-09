@@ -31,7 +31,7 @@ class FastFoodList(AbstactFoodList):
     objects(i.e: FastFood object)
 
     """
-    initial=FastFoodInfo.select().order_by(FastFoodInfo.id.desc()).get().id
+    initial=FastFoodInfo.select().count()
     if initial:
         state:int=initial
     else:

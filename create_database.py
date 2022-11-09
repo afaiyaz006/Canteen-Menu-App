@@ -15,4 +15,4 @@ class FastFoodInfo(Model):
 
 db.connect()
 db.create_tables([FastFoodInfo])
-FastFoodInfo.create(fastfood_id=0,foodname="test",price=0)
+

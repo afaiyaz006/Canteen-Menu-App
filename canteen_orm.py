@@ -14,4 +14,3 @@ class FastFoodInfo(Model):
 
 
 db.connect()
-print(FastFoodInfo.select().order_by(FastFoodInfo.id.desc()).get().id)
